@@ -3,16 +3,22 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'docs',
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': '',
-        'HOST': '10.177.73.97',
+        'NAME': 'readthedocs',
+        'USER': 'readthedocs',                      # Not used with sqlite3.
+        'PASSWORD': 'readthedocs',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+REDIS = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 0,
+}
+
+DEBUG = True
+TEMPLATE_DEBUG = True
 CELERY_ALWAYS_EAGER = False
 
 MEDIA_URL = '//media.readthedocs.org/'
